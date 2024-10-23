@@ -50,7 +50,9 @@ def capture_packets(packet):
 sniff(iface='Wi-Fi', prn=capture_packets, filter="tcp", count=100)
 
 df = pd.DataFrame(packets_list)
+#adding the filtered packets into a seperate csv file
+df.to_csv('filtered_packets.csv', index=False)
 
 print(df.head())
 
-wrpcap("captured_traffic.pcap", raw_packets_list)  
+wrpcap("captured_traffic.pcap", packets_list)  
