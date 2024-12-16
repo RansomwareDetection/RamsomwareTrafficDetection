@@ -1,0 +1,7 @@
+scapy
+psutil
+torch
+matplotlib
+scikit-learn
+pandas
+watchdog
