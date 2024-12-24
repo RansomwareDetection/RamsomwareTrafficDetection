@@ -23,11 +23,11 @@ def load_malware_model():
     try:
         # Load the trained model
         model = MalwareDetectionModel()
-        model.load_state_dict(torch.load("C:\KMIT\PS\Ransomware Detection\improved_model.pth"))  # Ensure model.pth exists and matches architecture
+        model.load_state_dict(torch.load("ransomware_detection\model\improved_model.pth"))  # Ensure model.pth exists and matches architecture
         model.eval()  # Set the model to evaluation mode
 
         # Load the scaler
-        scaler = joblib.load("C:\KMIT\PS\Ransomware Detection\improved_scaler.pkl")
+        scaler = joblib.load("ransomware_detection/model/improved_scaler.pkl")
 
         print("Malware detection model and scaler loaded successfully.")
         return model, scaler
